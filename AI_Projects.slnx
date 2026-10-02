@@ -1,0 +1,4 @@
+<Solution>
+  <Folder Name="/Qdrant_VectorDB_Web/" />
+  <Project Path="Qdrant_VectorDB_Console/Qdrant_VectorDB_Console.csproj" />
+</Solution>
