@@ -1,0 +1,10 @@
+langchain
+langchain-core
+langgraph
+langchain-openai
+langchain-anthropic
+python-dotenv
+beautifulsoup4
+requests
+lxml
+langchain-chroma
