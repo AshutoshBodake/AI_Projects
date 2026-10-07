@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "beautifulsoup4>=4.15.0",
+    "bm25>=0.3.13",
     "langchain>=1.4.3",
     "langchain-anthropic>=1.7.5",
     "langchain-chroma>=1.1.0",
@@ -16,7 +17,9 @@ dependencies = [
     "langchain-core>=1.6.6",
     "langchain-openai>=1.6.7",
     "langgraph>=1.2.12",
+    "ollama>=0.6.3",
     "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
 ]
 
 [project.scripts]
