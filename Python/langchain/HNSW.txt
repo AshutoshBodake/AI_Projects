@@ -1,0 +1,32 @@
+HNSW settings.
+
+# pgvector - creating an HNSW index
+CREATE INDEX ON documents
+USING hnsw (embedding vector_cosine_ops)
+WITH (m = 16, ef_construction = 64);
+
+# At query time, set ef_search
+SET hnsw.ef_search = 100;  # Higher = more accurate, slower
+
+# Chroma - HNSW settings
+collection = client.create_collection(
+    name='my_collection',
+    metadata={
+        'hnsw:M': 16,
+        'hnsw:construction_ef': 100,
+        'hnsw:search_ef': 50
+    }
+
+#reducing dimensions
+response = client.embeddings.create(
+    model='text-embedding-3-small',
+    input='Your text',
+    dimensions=512  # Reduced from 1536
+)
+
+# Bad: 10,000 API calls
+for query in queries:
+    results = index.query(query)
+
+# Good: Batched queries (if supported)
+results = index.query(queries, batch=True)
